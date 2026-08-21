@@ -1,17 +1,23 @@
 let _map = new Uint8Array(128)
-for (let i = 26; i--;) {
-    // A-Z
-    _map[65 + i] = i
-    // a-z
-    _map[97 + i] = 26 + i
+
+/** @type {number | typeof _map} */
+let _tmp = 26
+
+for (; _tmp--;
     // 0-9
-    if (i < 10) _map[48 + i] = 52 + i
+    _tmp > 9 || (_map[48 + _tmp] = 52 + _tmp)
+) {
+    // A-Z
+    _map[65 + _tmp] = _tmp
+    // a-z
+    _map[97 + _tmp] = 26 + _tmp
 }
-let _mapURL = _map.slice()
+
+_tmp = _map.slice()
 // + -
-_map[43] = _mapURL[45] = 62
+_map[43] = _tmp[45] = 62
 // / _
-_map[47] = _mapURL[95] = 63
+_map[47] = _tmp[95] = 63
 
 /**
  * Parse Base64 and Base64URL like `crypto-js`, returns `Uint8Array`.
@@ -26,7 +32,7 @@ var parseBase64 = (input, urlSafe) => {
     /** @type {number} */
     var tmp
 
-    var map = urlSafe ? _mapURL : _map
+    var map = urlSafe ? _tmp : _map
 
     var len = urlSafe ? -1 : input.indexOf('=')
 

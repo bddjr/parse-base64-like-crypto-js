@@ -6,6 +6,8 @@ This library implements the following logic:
 - When parsing Base64, the '=' in the input is treated as a terminator; it and any characters after it will be ignored.
 - If the last block has only 1 character, that character will be discarded.
 
+[`browser.min.js`](browser.min.js) is only **396 bytes**.
+
 Built for `@openccw/sb3-crypto`.
 
 ## Setup
