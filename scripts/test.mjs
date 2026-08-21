@@ -61,8 +61,12 @@ test("XYZABCDE");
 test("XYZ..ABCD???EF=====G");
 test("XYZ..ABCD*&(@^)*%&!*()%#!/EFGHIJKL");
 test("XYZ ABCD    \r\n  \n EFGHIJKL");
-test("XY+/-_");
-test("XY-_+/", true);
+test("XY+/-_=");
+test("XY-_+/=", true);
+
+console.log('===========================')
+console.log('random')
+console.log()
 
 for (let len = 0; len <= 12; len++) {
     const randomBuf = crypto.randomBytes(len);

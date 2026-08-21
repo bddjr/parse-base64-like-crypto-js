@@ -48,6 +48,7 @@ It will define the `parseBase64` function using `var`.
 parseBase64("ABCD.EFG0 12+/+/====")
 
 // Base64URL
+// It treats '=' as 0, not as a terminator.
 parseBase64("ABCD.EFG0 12-_-_====", true)
 ```
 
