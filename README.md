@@ -3,10 +3,8 @@ Parse Base64 and Base64URL like `crypto-js`, returns `Uint8Array`.
 This library implements the following logic:
 
 - Invalid characters in the input are treated as 0 (equivalent to 'A').
-- The '=' in the input is treated as a terminator; it and any characters after it will be ignored.
+- When parsing Base64, the '=' in the input is treated as a terminator; it and any characters after it will be ignored.
 - If the last block has only 1 character, that character will be discarded.
-
-[`browser.min.js`](browser.min.js) is only **400 bytes**.
 
 Built for `@openccw/sb3-crypto`.
 

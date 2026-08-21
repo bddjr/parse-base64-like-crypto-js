@@ -24,16 +24,16 @@ function wordArrayToUint8Array(wordArray) {
 
 /**
  * @param {string} input
- * @param {boolean} [isBase64URL]
+ * @param {boolean} [urlSafe]
  */
-function test(input, isBase64URL) {
+function test(input, urlSafe) {
     console.log('test', input)
-    console.log('is base64url:', !!isBase64URL)
+    console.log('is base64url:', !!urlSafe)
 
-    const bytesMine = parseBase64(input, isBase64URL);
+    const bytesMine = parseBase64(input, urlSafe);
     console.log('mine', bytesMine)
 
-    const enc = isBase64URL ? CryptoJS.enc.Base64url : CryptoJS.enc.Base64
+    const enc = urlSafe ? CryptoJS.enc.Base64url : CryptoJS.enc.Base64
     const cryptoResult = enc.parse(input);
     const bufCryptoJS = wordArrayToUint8Array(cryptoResult);
     console.log('crypto-js', bufCryptoJS)
