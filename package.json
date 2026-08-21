@@ -23,6 +23,10 @@
     "test:unchanged": "pnpm build:unchanged && pnpm test:only",
     "prepublishOnly": "pnpm test:unchanged"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bddjr/parse-base64-like-crypto-js.git"
+  },
   "keywords": [
     "base64",
     "base64url",
