@@ -1,0 +1,41 @@
+{
+  "name": "parse-base64-like-crypto-js",
+  "version": "0.0.1",
+  "description": "Parse Base64 and Base64URL like crypto-js, returns Uint8Array.",
+  "author": "bddjr",
+  "license": "Unlicense",
+  "type": "module",
+  "main": "main.js",
+  "types": "main.js",
+  "jsdelivr": "browser.min.js",
+  "unpkg": "browser.min.js",
+  "cdn": "browser.min.js",
+  "files": [
+    "main.js",
+    "main.d.ts",
+    "browser.min.js"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/build.mjs",
+    "build:unchanged": "node scripts/build-unchanged.mjs",
+    "test": "pnpm build && pnpm test:only",
+    "test:only": "node scripts/test.mjs",
+    "test:unchanged": "pnpm build:unchanged && pnpm test:only",
+    "prepublishOnly": "pnpm test:unchanged"
+  },
+  "keywords": [
+    "base64",
+    "crypto-js",
+    "decode",
+    "encode",
+    "atob",
+    "btoa"
+  ],
+  "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
+    "crypto-js": "^4.2.0",
+    "parse-base64-like-crypto-js": "link:",
+    "terser": "^5.50.0",
+    "typescript": "^7.0.2"
+  }
+}
