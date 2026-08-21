@@ -25,6 +25,7 @@
   },
   "keywords": [
     "base64",
+    "base64url",
     "crypto-js",
     "decode",
     "encode",
